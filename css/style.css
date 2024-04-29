@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+.df {
+  display: flex;
+  align-items: center;
+}
+
+.back-top {
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+  display: none;
+  background-color: #000000;
+  justify-content: center;
+  align-items: center;
+}
+
+.show__back-top {
+  display: flex;
+}
+
+body {
+  background: url(../../assets/image/bacround\ img.webp) no-repeat center/cover;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  background-color: rgba(54, 87, 98, 0.7960784314);
+  transition: 0.5s;
+  padding: 20px 0;
+}
+.header__navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__item a {
+  font-size: 30px;
+  color: white;
+}
+.header__title {
+  color: white;
+}
+.header__list {
+  gap: 40px;
+}
+.header__navbar img {
+  width: 24px;
+  height: 24px;
+}
+.header__form {
+  display: flex;
+  align-items: center;
+}
+.header__sorch-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px 5px 20px;
+  border: 1px solid white;
+  max-width: 600px;
+  border-radius: 30px 0 0 30px;
+  border-right: none;
+  gap: 30px;
+}
+.header__sorch-wrapper button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__search-input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+}
+.header ::-moz-placeholder {
+  color: white;
+}
+.header ::placeholder {
+  color: white;
+}
+.header__form__btn {
+  background: white;
+  padding: 9px 20px;
+  border-radius: 0 30px 30px 0;
+  border: 1px solid transparent;
+  transition: all 0.5s ease;
+}
+.header__form__btn:hover {
+  border: 1px solid white;
+  color: white;
+  background-color: transparent;
+}
+
+.show__header__shrink {
+  box-shadow: 0px 0px 5px #000000;
+}
+
+@media (max-width: 900px) {
+  .header__item:last-child {
+    display: none;
+  }
+}
+@media (max-width: 650px) {
+  .header__phone-link img, .header__phone-link p {
+    display: none;
+  }
+  .header__top__text {
+    font-size: 0.7em;
+  }
+  .header__login-link {
+    display: none;
+  }
+  .header__korzinka__btn {
+    display: none;
+  }
+  .header__item__link-btn {
+    display: block;
+  }
+}
+@media (max-width: 460px) {
+  .header__item {
+    display: none;
+  }
+  .header__item:nth-child(1) {
+    display: block;
+  }
+}
+.weather {
+  padding-top: 120px;
+}
+.weather__form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+}
+.weather__form img {
+  width: 24px;
+  height: 24px;
+}
+.weather__sorch-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid white;
+  border-radius: 30px;
+  width: 100%;
+}
+.weather__sorch-wrapper button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.283);
+  padding: 5px 10px 5px 20px;
+  border-radius: 0 30px 30px 0;
+}
+.weather__search-input {
+  outline: none;
+  border: none;
+  padding: 5px 10px 5px 20px;
+  background-color: transparent;
+  color: white;
+}
+.weather ::-moz-placeholder {
+  color: white;
+}
+.weather ::placeholder {
+  color: white;
+}
+.weather__title {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.weather__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.weather__boxes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.weather__card {
+  display: flex;
+  align-items: start;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .weather__form {
+    opacity: 1;
+  }
+}
