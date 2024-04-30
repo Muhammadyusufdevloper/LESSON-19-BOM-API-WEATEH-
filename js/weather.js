@@ -2,6 +2,8 @@ const form = document.querySelector("#form")
 const searchInput = document.querySelector("#search-input")
 const weatherCards = document.querySelector(".weather__cards")
 const weatherBottomCard = document.querySelector(".weather__bottom__cards")
+const weatherDaysCards = document.querySelector(".weather__days-cards")
+
 
 async function getWeather(searchText="Toshkent") {
     let data = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=644f6ce0ca9e401ebb891832211707&q=${searchText}&days=7&aqi=yes&alerts=yes`)
@@ -21,7 +23,8 @@ getWeather()
 
 function mapWeatherType(weatherType) {
     console.log(weatherType);
-
+    let days = +weatherType.location.localtime.split(" ").slice(1).join()[0]
+    console.log(days);
     weatherCards.innerHTML =   `
         <h2 class="weather__title">${weatherType.location.name}. ${weatherType.location.country}</h2>
         <div class="weather__card">
@@ -39,9 +42,7 @@ function mapWeatherType(weatherType) {
         </div>
     `
     let cardInfo = ""
-    let date = new Date()
-    let hours = date.getHours()
-    weatherType.forecast.forecastday[0].hour.slice(hours+1).forEach((hour)=>{
+    weatherType.forecast.forecastday[0].hour.slice(days+1).forEach((hour)=>{
         cardInfo +=`
             <div class="weather__bottom__part">
                 <h3 class="weather__bottom__hour">Time: ${hour.time.split(" ").slice(1)}</h3>
@@ -52,6 +53,26 @@ function mapWeatherType(weatherType) {
         `
     })
     weatherBottomCard.innerHTML = cardInfo
+
+    weatherDaysCards.innerHTML=`
+        <div class="weather__days-cards__card">
+            <h3 class="weather__days-cards__title">Ndfjef</h3>
+            <div class="weather__days-cards__part">
+                <img src="" alt="">
+                <p class="weather__days-cards__temp">3244</p>
+            </div>
+            <p class="weather__days-cards__text">Text</p>
+            <p class="weather__days-cards__desc"></p>
+            <p class="weather__days-cards__desc"></p>
+            <p class="weather__days-cards__desc"></p>
+            <p class="weather__days-cards__desc"></p>
+            <p class="weather__days-cards__desc"></p>
+            <p class="weather__days-cards__desc"></p>
+            <p class="weather__days-cards__desc"></p>
+            <p class="weather__days-cards__desc"></p>
+        </div>
+    `
+    
 }
 
 form.addEventListener("submit", (event)=>{
